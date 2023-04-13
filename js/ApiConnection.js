@@ -1,5 +1,5 @@
 async function videosList(){
-    const connection = await fetch("http://localhost:3000/videos");
+    const connection = await fetch("https://json-repo-video-js.vercel.app/videos");
     const convertedConnection = await connection.json();
     
     return convertedConnection;
@@ -7,7 +7,7 @@ async function videosList(){
 
 async function createVideo(url, img, title, description){
     
-    const connection = await fetch("http://localhost:3000/videos", {
+    const connection = await fetch("https://json-repo-video-js.vercel.app/videos", {
         method: "POST",
         headers: {
             "Content-type": "application/json"
@@ -29,7 +29,7 @@ async function createVideo(url, img, title, description){
 }
 
 async function videosSerch(query){
-    const connection = await fetch(`http://localhost:3000/videos?q=${query}`)
+    const connection = await fetch(`https://json-repo-video-js.vercel.app/videos?q=${query}`)
     const convertedConnection = await connection.json();
 
     return convertedConnection;
